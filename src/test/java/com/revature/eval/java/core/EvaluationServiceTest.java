@@ -453,7 +453,7 @@ public class EvaluationServiceTest {
 	}
 
 	@Test
-	public void testUndefinedPrime() {
+	public void t() {
 		expectedException.expect(IllegalArgumentException.class);
 		evaluationService.calculateNthPrime(0);
 	}
