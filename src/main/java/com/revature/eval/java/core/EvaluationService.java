@@ -873,9 +873,17 @@ public class EvaluationService {
 	 */
 	public Temporal getGigasecondDate(Temporal given) {
 		
-		//Tried. Learned that time in Java is the most annoying thing ever
-	
-		return null;
+		if(given instanceof LocalDate)
+			
+			return LocalDateTime.of((LocalDate) given, LocalTime.MIN).plusSeconds(1000000000);
+			
+		else if(given instanceof LocalDateTime)
+			
+			return ((LocalDateTime) given).plusSeconds(1000000000);
+			
+		else 
+			
+			return given;
 		
 	}
 
